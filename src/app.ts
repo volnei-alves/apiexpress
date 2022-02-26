@@ -1,4 +1,6 @@
-import express,{application, Application, Request, Response} from "express";  
+import 'dotenv/config' 
+import express,{ Application, Request, Response} from "express";  
+
 
 const app: Application = express()
 const port: Number = 3000
