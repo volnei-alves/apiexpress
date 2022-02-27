@@ -1,10 +1,8 @@
-import user from '../api/services/user'
-import {env} from 'process'
 
 describe('Users', () => {
 
   it('user response test', () => {
-    const response =  user()
+    const response =  "hello word"
     expect(response).toEqual('hello word')
   })
 
