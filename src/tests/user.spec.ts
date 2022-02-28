@@ -1,10 +1,11 @@
+import UserModel from "../models/UserModel"
 
-describe('Users', () => {
+describe('Get Users', () => {
 
-  it('user response test', () => {
-    const response =  "hello word"
-    expect(response).toEqual('hello word')
-  })
-
+  const expected: string[] = [];
  
+  it('Users response GetAll', async () => {
+    const response = await new UserModel().GetUsersAll()
+    expect(expected).not.toEqual(expect.arrayContaining(response));
+  }) 
 })
