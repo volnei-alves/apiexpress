@@ -1,7 +1,7 @@
 {
   "name": "apiexpress",
   "version": "1.0.0",
-  "description": "",
+  "description": "Desenvolvimento de api com node, express e prisma",
   "main": "app.ts",
   "scripts": {
     "start": "npx tsc && set NODE_ENV=production && node build/app.js",
@@ -9,7 +9,7 @@
     "test": "set NODE_ENV=test && jest --detectOpenHandles --forceExit"
   },
   "keywords": [],
-  "author": "",
+  "author": "Volnei Aves",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "3.10.0",
