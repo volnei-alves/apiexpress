@@ -55,6 +55,3 @@ Para rodar os testes, rode o seguinte comando
 
 - [@volneialves](https://www.instagram.com/volneialves.f/)
 
-=======
-# Criação de Api com node e Express
->>>>>>> 25b2931a973477cff0ed449037ed16ee09f3e3d0
