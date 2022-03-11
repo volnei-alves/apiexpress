@@ -1,39 +1,39 @@
 import { Request, Response } from "express"
 
-import {CreateUser, DeleteUser, GetUser, GetUsersAll, UpdateUser} from "../models/UserModel"
+import {AddUser,  DeleteUserId,  GetUserId,  GetUsers, UpdateUserId, } from "../models/UserModel"
 
 
-const postCreateUser = async (req: Request, res: Response) => {
+const CreateUser = async (req: Request, res: Response) => {
     const {email, name} = req.body
 
-    const allUser = await CreateUser(email, name)
+    const response = await AddUser(email, name)
 
-    res.json(allUser)
+    res.json(response)
 }
 
-const getAll = async (req: Request, res: Response) => {
+const GetUsersAll = async (req: Request, res: Response) => {
 
-    const allUsers = await GetUsersAll()   
+    const allUsers = await GetUsers()   
 
     res.json(allUsers)
 }
 
-const getUserId= async (req: Request, res: Response) => {
+const GetUser= async (req: Request, res: Response) => {
 
-    const responseUser= await GetUser(req.params.id)   
-
-    res.json(responseUser)
-}
-
-const updateUserId= async (req: Request, res: Response) => {
-
-    const responseUser= await UpdateUser(req.params.id, req.body)   
+    const responseUser= await GetUserId(req.params.id)   
 
     res.json(responseUser)
 }
 
-const deleteUser= async (req: Request, res: Response) => {
-   const responsedelete = await DeleteUser(req.params.id)  
+const UpdateUser= async (req: Request, res: Response) => {
+
+    const responseUser= await UpdateUserId(req.params.id, req.body)   
+
+    res.json(responseUser)
+}
+
+const DeleteUser= async (req: Request, res: Response) => {
+   const responsedelete = await DeleteUserId(req.params.id)  
   
    if(responsedelete === false){
      res.json({mensage: 'failed to deleted User'})
@@ -44,4 +44,4 @@ const deleteUser= async (req: Request, res: Response) => {
 }
 
 
-export {getAll,getUserId,updateUserId,deleteUser, postCreateUser}
+export {CreateUser, GetUser, GetUsersAll, UpdateUser, DeleteUser}

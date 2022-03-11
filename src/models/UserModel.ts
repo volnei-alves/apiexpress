@@ -1,9 +1,7 @@
 import db from "../services/prismaOrm"
 import { user } from "../types/user.types"
 
-
-
-export async function CreateUser(email: string, name: string) {
+export async function AddUser(email: string, name: string) {
     try {
         const createUser = await db.user.create({
             data: {
@@ -17,14 +15,14 @@ export async function CreateUser(email: string, name: string) {
     }
 }
 
-export async function GetUsersAll() {
+export async function GetUsers() {
 
     const allUsers = await db.user.findMany()
 
     return allUsers
 }
 
-export async function GetUser(id: string) {
+export async function GetUserId(id: string) {
 
     try {
         const userId = await db.user.findUnique({
@@ -37,7 +35,7 @@ export async function GetUser(id: string) {
     }
 }
 
-export async function UpdateUser(id: string, dados: user) {
+export async function UpdateUserId(id: string, dados: user) {
 
     try {
         const updateUser = await db.user.update({
@@ -51,7 +49,7 @@ export async function UpdateUser(id: string, dados: user) {
     }
 }
 
-export async function DeleteUser(id: string) {
+export async function DeleteUserId(id: string) {
     
     try {
         const deleteUserId = await db.user.delete({
